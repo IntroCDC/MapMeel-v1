@@ -1,0 +1,7 @@
+name: MapMeel
+version: 1.0
+author: IntroCDC
+main: br.com.introcdc.mapmeelv1.MapMain
+
+commands:
+    mapmeelv1complete:
