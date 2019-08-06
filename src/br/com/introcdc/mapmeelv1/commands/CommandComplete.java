@@ -13,6 +13,9 @@ public class CommandComplete implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {
+            return false;
+        }
         for (Player player : Bukkit.getOnlinePlayers()) {
             MapMain.sendTitle(player, "§2§lParabéns!", "§oVocê finalizou o MapMeel v1 com sucesso!", 20, 100, 20);
             player.sendMessage("§5§lMapMeel >> §2§lParabéns! §f§oVocê finalizou o MapMeel v1 com sucesso!");
@@ -23,10 +26,11 @@ public class CommandComplete implements CommandExecutor {
             @Override
             public void run() {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    MapMain.sendPlayer(player, "v2");
+                    MapMain.sendPluginMessage(player, "MapMeelv1Complete");
+                    MapMain.sendPlayer(player, "KitPvP");
                 }
             }
-        }.runTaskLater(MapMain.getPlugin(), 100);
+        }.runTaskLater(MapMain.getPlugin(), 200);
         return false;
     }
 

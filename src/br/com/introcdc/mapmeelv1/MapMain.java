@@ -29,6 +29,7 @@ public class MapMain extends JavaPlugin {
         getCommand("mapmeelv1complete").setExecutor(new CommandComplete());
         Bukkit.getPluginManager().registerEvents(new MapListeners(), MapMain.getPlugin());
         Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+        Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "kindome:pm");
     }
 
     public static void sendPlayer(Player player, String server) {
@@ -44,7 +45,7 @@ public class MapMain extends JavaPlugin {
             }
         } catch (IOException ignored) {
         }
-        player.sendPluginMessage(getPlugin(), "BungeeCord", byteArray.toByteArray());
+        player.sendPluginMessage(getPlugin(), "kindome:pms", byteArray.toByteArray());
     }
 
     public static void sendTitle(Player player, String title, String subtitle, int fadeIn, int duration, int fadeOut) {

@@ -48,8 +48,11 @@ public class MapListeners implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
-        if (event.getPlayer().getLocation().getY() < 0) {
-            event.setTo(SPAWN);
+        if (event.getPlayer().getLocation().getY() < -64) {
+            Location location = event.getTo().clone();
+            location.setY(1);
+            event.getPlayer().getWorld().strikeLightningEffect(location);
+            MapMain.sendPlayer(event.getPlayer(), "KitPvP");
         }
     }
 
