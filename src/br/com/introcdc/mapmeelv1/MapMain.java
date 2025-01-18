@@ -45,7 +45,7 @@ public class MapMain extends JavaPlugin {
             }
         } catch (IOException ignored) {
         }
-        player.sendPluginMessage(getPlugin(), "kindome:pms", byteArray.toByteArray());
+        player.sendPluginMessage(getPlugin(), "kindome:pm", byteArray.toByteArray());
     }
 
     public static void sendTitle(Player player, String title, String subtitle, int fadeIn, int duration, int fadeOut) {
